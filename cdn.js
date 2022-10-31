@@ -21,3 +21,15 @@ router.get('/cdn/:filename', async (ctx) => {
     ctx.response.body = file;
     return;
 });
+
+//Server
+app.use(oakCors({ origin: "*" }));
+app.use(router.routes());
+app.use(router.allowedMethods());
+ 
+app.addEventListener('listen', () => {
+  console.log(`Listening on localhost:${port}`);
+});
+
+//Start Server
+await app.listen({ port });
