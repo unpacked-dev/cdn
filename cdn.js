@@ -11,18 +11,14 @@ router.get('/cdn/:filename', async (ctx) => {
     const filename = ctx.params.filename.toLowerCase();
     const type = filename.split('.')[1];
 
-    if(!filenames.includes(filename)) {
-        ctx.response.status = 404;
-        return;
-    }
-
     try {
         const file = await Deno.readFile(`./public/${filename}`);
         ctx.response.type = `text/${type}`;
         ctx.response.body = file;
         return;
     } catch(err) {
-        console.log(err);
+        ctx.response.status = 404;
+        return;
     }
     
 });
