@@ -16,10 +16,15 @@ router.get('/cdn/:filename', async (ctx) => {
         return;
     }
 
-    const file = await Deno.readFile(`./public/${filename}`);
-    ctx.response.type = `text/${type}`;
-    ctx.response.body = file;
-    return;
+    try {
+        const file = await Deno.readFile(`./public/${filename}`);
+        ctx.response.type = `text/${type}`;
+        ctx.response.body = file;
+        return;
+    } catch(err) {
+        console.log(err);
+    }
+    
 });
 
 //Server
