@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    margin: 0px;
+}
+
+input {
+    border: transparent;
+    box-shadow: none;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+img {
+    pointer-events: none;
+    user-select: none;
+}
