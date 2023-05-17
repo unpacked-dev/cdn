@@ -7,7 +7,7 @@ const port = 8000;
 const app = new Application();
 const router = new Router();
 
-router.get('/cdn/:filename', async (ctx) => {
+router.get('/:filename', async (ctx) => {
     const filename = ctx.params.filename.toLowerCase();
     const type = filename.split('.')[1];
 
