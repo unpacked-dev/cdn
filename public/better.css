@@ -2,6 +2,7 @@
     box-sizing: border-box;
 }
 
+/* TEXTS */
 body,
 h1,
 h2,
@@ -12,17 +13,57 @@ p {
     margin: 0px;
 }
 
+/* INPUT */
 input {
     border: transparent;
     box-shadow: none;
 }
 
+/* BUTTONS */
 button {
     border: none;
     cursor: pointer;
 }
 
+/* IMAGES */
 img {
     pointer-events: none;
     user-select: none;
+    object-fit: contain;
+}
+
+/* GRID */
+*[class^="grid-"]{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid-x {
+    flex-direction: row;
+}
+
+.grid-y {
+    flex-direction: column;
+}
+
+.no-wrap {
+    flex-wrap: nowrap;
+}
+
+/* POINTERS */
+.hover-pointer:hover {
+    cursor: pointer;
+}
+
+.hover-disabled:hover {
+    cursor: not-allowed;
+}
+
+.no-pointer:hover {
+    pointer-events: none;
+}
+
+/* DISPLAY */
+.hidden {
+    display: none;
 }
