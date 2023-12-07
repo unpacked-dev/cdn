@@ -15,3 +15,12 @@ function debounce(func, wait) {
 async function sleep(wait) {
     return new Promise(resolve => setTimeout(resolve, wait));
 }
+
+function cloneObject(object) {
+    try {
+        return JSON.parse(JSON.stringify(object))
+    }
+    catch(err) {
+        return undefined;
+    }
+}
